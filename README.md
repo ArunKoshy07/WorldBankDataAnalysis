@@ -14,19 +14,28 @@ https://datacatalog.worldbank.org/dataset/global-economic-prospects
 ### To run the scripts as standalone tasks
 
 1. Install Python (version 3 or above). once the python is installed run the following pip command to 
-install the package 'pip install -r requirements.txt'
+install the package '''pip install -r requirements.txt'''
 
-2. run the python script extractGdpData.py to extract the data from the end points 
+2. update the database.ini file to point to the postgres sql db on your machine. if not installed please 
+follow this link https://www.postgresql.org/download/ to install postgressql locally.  
 
+3. run the python script extractGdpData.py to extract the data from the end points 
+'''python extractGdpData.py'''
 
+4. the postgresql queries are provide in the postgreSqlScripts.sql file. 
 
-
-### To Run above as a notebook in a container 
+### To run as a notebook in a container 
 Docker compose commands to be run to start two containers one for jupyter server and other for postgresql db. 
-the command to be run on the terminal is  'docker-compose up'
+the command to be run on the terminal is  '''docker-compose up'''
 
-access the link 'localhost:8888' through the browser for jupyter notebook. 
+Docker compose startup logs on the terminal will provide the link to access the jupyter instance via browser. 
+'''
+worldbankdataanalysis-jupyter-1   |     Or copy and paste one of these URLs:
+worldbankdataanalysis-jupyter-1   |         http://65eb15cb8a18:8888/?token=7544c0c1fbb..........41b9b77b846485945
+worldbankdataanalysis-jupyter-1   |      or http://127.0.0.1:8888/?token=7544c0........77b846485945 
+'''
+access jupyter notebook using the link through the browser for jupyter notebook. 
 the python notebooks availbale in the notebooks folder is made available on the notebook session. 
 
-Inorder to stop and kill the containers, please press "Ctrl+c" on the terminal to end the session 
-and followed by "docker-compose down" to kill the containers. 
+Inorder to stop and kill the containers, please press '''Ctrl+c''' on the terminal to end the session 
+and followed by '''docker-compose down''' to kill the containers. 
