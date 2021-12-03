@@ -76,9 +76,10 @@ ORDER BY finalrslt.regionid,finalrslt.country_rank
  
 --- 7 Provide an interesting fact from dataset
 '''
-In the below query GDP growth for maldives is around 9.5 where US is 3.5, however US GDP in USD is $20T and Maldives GDP is 5.3B. 
-So, even if the GDP growth numbers are high for analysis we need it be combined with GDP in USD or a common currency to how the 
-various economies are performing. 
+In the below query, GDP growth for maldives is around 9.5 where US is 3.5 for the year 2021, however for the year 2021 the US 
+GDP in USD is $20T and Maldives GDP is 5.3B. So, even if the GDP growth numbers are high, for analysis purpose we need it to be 
+combined with GDP in USD or in a common currency to show how the various economies are performing. 
+(Data Source - https://georank.org/economy/maldives/united-states)
 '''
 select finalrslt.* 
 from

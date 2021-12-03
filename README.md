@@ -58,3 +58,5 @@ and followed by the below command to kill the containers.
 ```
 docker-compose down
 ```
+
+the notebook output has been saved as a pdf in this repo for refeference (worldbankdataanalysis_ipynb.pdf)
