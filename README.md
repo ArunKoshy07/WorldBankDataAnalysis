@@ -13,7 +13,7 @@ https://datacatalog.worldbank.org/dataset/global-economic-prospects
 
 ### To run the scripts as standalone tasks
 
-1. Install Python (version 3 or above). once the python is installed run the following pip command to 
+1. Install Python version 3 or above from [python.org](https://docs.python.org/3/using/index.html). Once python is installed run the following pip command to 
 install the package 
 
 ```
@@ -33,7 +33,8 @@ python extractGdpData.py
 
 ### To run as a notebook in a container 
 
-Docker compose command is to be executed to start the two containers one for jupyter server and other for postgresql db. 
+Docker and Docker compose is used to run the containers. Docker compose command is to be 
+executed to start the two containers one for jupyter server and other for postgresql db. 
 the command to be run on the terminal from the repo folder is 
 
 ```
@@ -48,8 +49,8 @@ worldbankdataanalysis-jupyter-1   |         http://65eb15cb8a18:8888/?token=7544
 worldbankdataanalysis-jupyter-1   |      or http://127.0.0.1:8888/?token=7544c0........77b846485945 
 ```
 
-access jupyter notebook using the link through the browser for jupyter notebook. 
-the python notebooks availbale in the notebooks folder is made available on the notebook session. 
+access jupyter notebook using the link through the browser. the python notebooks availbale in the notebooks folder 
+is made available on the notebook session. 
 
 Inorder to stop and kill the containers, please press '''Ctrl+c''' on the terminal to end the session 
 and followed by the below command to kill the containers. 

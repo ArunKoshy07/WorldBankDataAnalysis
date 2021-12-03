@@ -73,7 +73,26 @@ LEFT JOIN public."worldBankGdpCnty" as cnty on cnty.id = rslt."CountryCode" ) fi
 WHERE finalrslt.country_rank < 4
 ORDER BY finalrslt.regionid,finalrslt.country_rank
  
+ 
 --- 7 Provide an interesting fact from dataset
+'''
+In the below query GDP growth for maldives is around 9.5 where US is 3.5, however US GDP in USD is $20T and Maldives GDP is 5.3B. 
+So, even if the GDP growth numbers are high for analysis we need it be combined with GDP in USD or a common currency to how the 
+various economies are performing. 
+'''
+select finalrslt.* 
+from
+(
+select cnty.regionid, cnty.regionvalue, cnty.id,
+rslt."CountryName", rslt."2021" as "gdp2021", 
+RANK() OVER(PARTITION BY cnty.regionid ORDER BY rslt."2021" DESC) as "country_rank" 
+from
+(select "CountryName", "CountryCode", "IndicatorName","IndicatorCode","2018","2019","2020","2021","2022"
+from public."worldBankDataCatalogueGep" 
+where "CountryCode" <> ALL (array['AME','EAA','EMD','E19','ECH','LAP','MNH','SAP','SSP','WLT'])) rslt  
+LEFT JOIN public."worldBankGdpCnty" as cnty on cnty.id = rslt."CountryCode" ) finalrslt
+WHERE finalrslt.country_rank < 4
+ORDER BY finalrslt.gdp2021
 
 --------------------------- Other Queries
 -- select * from public."worldBankGdpRegn"
